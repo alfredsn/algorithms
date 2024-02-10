@@ -1,1 +1,3 @@
-Exploring algorithms and data structures to deepen my understanding of computer science. Join me on this learning journey as I navigate through various concepts and implementations. Contributions and feedback are welcome as I strive to enhance my skills in this field.
+# Exploring Algorithms and Data Structures
+
+**Join me on this learning journey** as I navigate through various concepts and implementations to deepen my understanding of computer science. **Contributions and feedback** are welcome as I strive to enhance my skills in this field.
