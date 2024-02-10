@@ -32,4 +32,12 @@ fun main() {
         println("]")
     }
     println("=========================================================================")
+
+    println("Increasing Subsequence")
+    println("-------------------------------------------------------------------------")
+    val solutionSRSA = SolutionSRSA()
+    val nums = intArrayOf(121, 20, 43, 14, 95)
+    println("Input: ${nums.joinToString()}")
+    println("Output: ${solutionSRSA.canBeIncreasing(nums)}")
+    println("=========================================================================")
 }
