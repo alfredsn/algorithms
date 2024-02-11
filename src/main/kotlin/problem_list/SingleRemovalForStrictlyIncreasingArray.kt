@@ -41,7 +41,7 @@ class SolutionSRSA {
     fun canBeIncreasing(nums: IntArray): Boolean {
         var removed = false
 
-        for (i in 1 until nums.size) {
+        for (i in 1..<nums.size) {
             if (nums[i] <= nums[i - 1]) {
                 if (removed) {
                     return false
