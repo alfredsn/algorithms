@@ -28,14 +28,20 @@ Output:
 */
 
 fun findMissingNumber(n: Int, arr: List<Int>): Int {
-    val totalSum = (n * (n + 1)) / 2
-    val givenSum = arr.sum()
-    val missingNumber = totalSum - givenSum
+    var res = 0
 
-    return missingNumber
+    if (n >= 0) {
+        val totalSum = (n * (n + 1)) / 2
+        val givenSum = arr.sum()
+        res = totalSum - givenSum
+    } else {
+        println("The value of n must be positive!")
+    }
+
+    return res
 }
 
 fun main() {
-    val missingNumber = findMissingNumber(5, listOf(2,3,1,5))
+    val missingNumber = findMissingNumber(-6, listOf(2,3,1,5,4))
     println(missingNumber)
 }
