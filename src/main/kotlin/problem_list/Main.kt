@@ -40,4 +40,55 @@ fun main() {
     println("Input: ${nums.joinToString()}")
     println("Output: ${solutionSRSA.canBeIncreasing(nums)}")
     println("=========================================================================")
+
+    println("Plus One")
+    println("-------------------------------------------------------------------------")
+    val solutionPO = SolutionPO()
+    val nPO = intArrayOf(1, 3, 4, 7, 8)
+    println("Input: ${nPO.joinToString()}")
+    val result = solutionPO.plusOne(nPO)
+    println("Output: ${result.joinToString()}")
+    println("=========================================================================")
+
+    println("Multiplication of Strings")
+    println("-------------------------------------------------------------------------")
+    val solutionMultiply = SolutionMS()
+    val num1 = "123"
+    val num2 = "456"
+    println("Input: num1 = \"$num1\", num2 = \"$num2\"")
+    println("Output: ${solutionMultiply.multiply(num1, num2)}")
+    println("=========================================================================")
+
+    println("Valid Parentheses")
+    println("-------------------------------------------------------------------------")
+    val solutionVP = SolutionVP()
+
+    val input1 = "()"
+    println("Input: \"$input1\"")
+    println("Output: ${solutionVP.isValid(input1)}")
+
+    val input2 = "()[]{}"
+    println("Input: \"$input2\"")
+    println("Output: ${solutionVP.isValid(input2)}")
+
+    val input3 = "(]"
+    println("Input: \"$input3\"")
+    println("Output: ${solutionVP.isValid(input3)}")
+    println("=========================================================================")
+
+    println("Dungeon Game")
+    println("-------------------------------------------------------------------------")
+
+    val solutionDG = SolutionDG()
+
+    val rooms = arrayOf(
+        intArrayOf(-10, -2, -23, 11),
+        intArrayOf(-40, -5, -60, -12),
+        intArrayOf(17, -18, 9, -13)
+    )
+
+    val minInitialHealth = solutionDG.calculateMinimumHP(rooms)
+    println("Minimum initial health required: $minInitialHealth")
+    println("=========================================================================")
+
 }
