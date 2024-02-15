@@ -39,25 +39,25 @@ class SolutionDG {
     fun calculateMinimumHP(dungeon: Array<IntArray>): Int {
         val m = dungeon.size
         val n = dungeon[0].size
-        val minHP = Array(m) { IntArray(n) }
+        val dungeonPath = Array(m) { IntArray(n) }
 
-        minHP[m - 1][n - 1] = maxOf(1, 1 - dungeon[m - 1][n - 1])
+        dungeonPath[m - 1][n - 1] = maxOf(1, 1 - dungeon[m - 1][n - 1])
 
         for (i in m - 2 downTo 0) {
-            minHP[i][n - 1] = maxOf(1, minHP[i + 1][n - 1] - dungeon[i][n - 1])
+            dungeonPath[i][n - 1] = maxOf(1, dungeonPath[i + 1][n - 1] - dungeon[i][n - 1])
         }
 
         for (j in n - 2 downTo 0) {
-            minHP[m - 1][j] = maxOf(1, minHP[m - 1][j + 1] - dungeon[m - 1][j])
+            dungeonPath[m - 1][j] = maxOf(1, dungeonPath[m - 1][j + 1] - dungeon[m - 1][j])
         }
 
         for (i in m - 2 downTo 0) {
             for (j in n - 2 downTo 0) {
-                val right = maxOf(1, minHP[i][j + 1] - dungeon[i][j])
-                val down = maxOf(1, minHP[i + 1][j] - dungeon[i][j])
-                minHP[i][j] = minOf(right, down)
+                val right = maxOf(1, dungeonPath[i][j + 1] - dungeon[i][j])
+                val down = maxOf(1, dungeonPath[i + 1][j] - dungeon[i][j])
+                dungeonPath[i][j] = minOf(right, down)
             }
         }
-        return minHP[0][0]
+        return dungeonPath[0][0]
     }
 }
