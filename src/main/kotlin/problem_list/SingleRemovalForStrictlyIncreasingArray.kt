@@ -3,11 +3,10 @@ package problem_list
 /*
 Single Removal for Strictly Increasing Array (Easy)
 --------------------------------------------------------------------------
-Given a 0-indexed integer array nums, return true if it can be made strictly increasing after removing exactly one element, or false otherwise. If the array is already strictly increasing, return true.
+Given a 0-indexed integer array nums, return true if it can be made strictly increasing after removing exactly one element,
+or false otherwise. If the array is already strictly increasing, return true.
 
 The array nums is strictly increasing if nums[i - 1] < nums[i] for each index (1 <= i < nums.length).
-
-
 
 Example 1:
 Input: nums = [1,2,10,5,7]
@@ -40,20 +39,13 @@ Constraints:
 class SolutionSRSA {
     fun canBeIncreasing(nums: IntArray): Boolean {
         var removed = false
-
-        for (i in 1..<nums.size) {
+        for (i in 1 until nums.size) {
             if (nums[i] <= nums[i - 1]) {
-                if (removed) {
-                    return false
-                }
+                if (removed) return false
                 removed = true
-
-                if (i > 1 && nums[i] <= nums[i - 2]) {
-                    nums[i] = nums[i - 1]
-                }
+                if (i > 1 && nums[i] <= nums[i - 2]) nums[i] = nums[i - 1]
             }
         }
-
         return true
     }
 }
