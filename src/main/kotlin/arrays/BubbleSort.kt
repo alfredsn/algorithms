@@ -8,7 +8,7 @@ fun bubbleSort(bubbleArray: Array<Int>): Array<Int> {
     while (swapAct) {
         swapAct = false
 
-        for (index in lowerBoundBubS until upperBoundBubS) {
+        for (index in lowerBoundBubS ..< upperBoundBubS) {
             if (bubbleArray[index] > bubbleArray[index + 1]) {
                 val temp = bubbleArray[index]
                 bubbleArray[index] = bubbleArray[index + 1]
