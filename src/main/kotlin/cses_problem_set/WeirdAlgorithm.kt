@@ -35,7 +35,7 @@ fun weirdAlgo(n: Int) {
     var nums = n
     print("$nums ")
     while (nums != 1) {
-        nums = if (nums % 2 == 0) nums / 2 else nums * 3 + 1
+        nums = if (nums % 2 == 0) nums / 2 else (nums * 3) + 1
         print("$nums ")
     }
 }
